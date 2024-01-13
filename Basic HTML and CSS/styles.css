@@ -1,0 +1,126 @@
+/* Add your CSS styles here */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FF2040;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+footer {
+    background-color: #FF2040;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+nav {
+    background-color: #FF2040;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #C8102E;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-top: 1em;
+}
+
+section {
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #C8102E;
+    color: white;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+h2,h3,h4,strong {
+    color: #00205B;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* Two equal columns */
+    gap: 20px;
+    /* Adjust the gap between the columns */
+}
+
+.text-container {
+    text-align: left;
+    /* Left Align the text container */
+
+
+}
+
+img {
+    max-width: 100%;
+    /* Make sure the image doesn't exceed its container */
+    height: auto;
+    /* Maintain aspect ratio of the image */
+    display: block;
+    /* Remove default image spacing */
+    margin: auto;
+    /* Center the image */
+}
+
+.flag {
+    width: 240px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
