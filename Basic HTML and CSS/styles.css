@@ -67,6 +67,14 @@ section {
     margin: 0 auto;
 }
 
+
+@media screen and (max-width: 800px) {
+    section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
