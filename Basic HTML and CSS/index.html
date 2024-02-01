@@ -13,13 +13,17 @@
     </header>
 
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#explore-texas">Explore</a></li>
-        <li><a href="#top-cities">Cities</a></li>
-        <li><a href="#state-flags">Flags</a></li>
-        <li><a href="#fun-facts">Fun Facts</a></li>
-      </ul>
+      <div class="container">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#explore-texas">Explore</a></li>
+          <li><a href="#top-cities">Cities</a></li>
+          <li><a href="#state-flags">Flags</a></li>
+          <li><a href="#fun-facts">Fun Facts</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact-us">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <section id="explore-texas">
@@ -368,9 +372,166 @@
         </li>
       </ul>
     </section>
+    <section id="faq">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-container">
+        <details class="faq">
+          <summary>
+            <h4>What is the state bird of Texas?</h4>
+          </summary>
+          <p>
+            The state bird of Texas is the Northern Mockingbird. It was
+            designated as the official state bird in 1927.
+          </p>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <h4>What is the state motto of Texas?</h4>
+          </summary>
+          <p>
+            The state motto of Texas is "Friendship." It was adopted in 1930 and
+            is derived from the Native American word "tejas," meaning "friends"
+            or "allies."
+          </p>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <h4>What is the state tree of Texas?</h4>
+          </summary>
+          <p>
+            The state tree of Texas is the Pecan Tree. It was designated as the
+            official state tree in 1919.
+          </p>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <h4>What is the state flower of Texas?</h4>
+          </summary>
+          <p>
+            The state flower of Texas is the Bluebonnet. It was designated as
+            the official state flower in 1901.
+          </p>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <h4>What is the state song of Texas?</h4>
+          </summary>
+          <p>
+            The state song of Texas is "Texas, Our Texas." It was adopted as the
+            official state song in 1929.
+          </p>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <h4>What is the state fish of Texas?</h4>
+          </summary>
+          <p>
+            The state fish of Texas is the Guadalupe Bass. It was designated as
+            the official state fish in 1989.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <div class="container" id="contact-us">
+      <div class="left-column" style="width: 33%">
+        <h2>Contact Us</h2>
+        <p>
+          For more information, please feel free to reach out to us using the
+          contact form:
+        </p>
+      </div>
+      <div class="right-column">
+        <form action="" method="get" class="form">
+          <fieldset>
+            <legend>Personal Information</legend>
+            <div class="row" style="display: flex; gap: 10px; flex-wrap: wrap">
+              <div style="flex: 1; min-width: 200px">
+                <label for="name">First name: </label>
+                <input type="text" name="name" id="name" required />
+              </div>
+
+              <div style="flex: 1; min-width: 200px">
+                <label for="surname">Last name: </label>
+                <input type="text" name="surname" id="surname" required />
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 10px">
+              <label for="dob">Date of Birth: </label>
+              <input type="date" name="dob" id="dob" required />
+            </div>
+          </fieldset>
+
+          <fieldset style="margin-top: 20px">
+            <legend>Contact Information</legend>
+            <div class="row">
+              <label for="email">Email: </label>
+              <input type="email" name="email" id="email" required />
+            </div>
+
+            <div class="row" style="margin-top: 10px">
+              <label for="message">Message: </label>
+              <textarea name="message" id="message" required></textarea>
+            </div>
+          </fieldset>
+          <div class="row">
+            <input
+              type="checkbox"
+              name="newsletter"
+              id="newsletterYes"
+              required
+            />
+            <label for="newsletterYes"
+              >Yes, I want to sign up for the mailing list</label
+            >
+          </div>
+          <input type="submit" value="Submit" />
+          <button type="reset">Clear Form</button>
+        </form>
+      </div>
+    </div>
+
     <footer>
       <p>&copy; 2024 Brandon Ching</p>
-      <i>Disclaimer: This page contains AI Generated information</i>
+      <i
+        >Disclaimer: This page contains AI Generated information. As well as
+        content from the first assignment. The "Top" button is provided via
+        <a href="https://www.w3schools.com/howto/howto_js_scroll_to_top.asp"
+          >W3Schools</a
+        >
+        because I can't be bothered to do that on my own.</i
+      >
     </footer>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   </body>
 </html>
+
+<script>
+  let mybutton = document.getElementById("myBtn");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
