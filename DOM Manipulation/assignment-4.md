@@ -12,7 +12,7 @@ We'll also keep up with our CSS work and use flexbox to lay out the Pokemon card
 
 See the attached video, as well, for the expected behavior of the assignment.
 
-You can find the Pokemon API here. Links to an external site.
+You can find the Pokemon API here[https://pokeapi.co/].
 
 Please note: We're not using React with this assignment. We're using plain JavaScript and DOM APIs for this assignment.
 

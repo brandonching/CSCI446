@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Manipulation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <p class="title">Pokémon Card Generator</p>
+        <p class="subtitle">Enter a Pokémon name to generate a Pokémon card</p>
+      </div>
+    </section>
+
+    <!-- Text Box and Submit Button-->
+    <div class="container" style="margin-top: 2%">
+      <form class="box">
+        <div class="field">
+          <label class="label">Enter Pokémon Name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="e.g., Pikachu, Charizard"
+              id="input-name"
+              oninput="validatePokemonInput()"
+            />
+          </div>
+          <p id="error-message" class="help is-danger" style="display: none">
+            Invalid Pokémon name
+          </p>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link" id="submit" disabled>
+              Load Pokémon Card
+            </button>
+          </div>
+          <div class="control">
+            <button
+              class="button is-info"
+              id="lucky"
+              onclick="getRandomPokemon()"
+            >
+              I'm Feeling Lucky
+            </button>
+          </div>
+
+          <div class="control">
+            <button class="button is-danger" id="clear" onclick="clearCards()">
+              Clear Cards
+            </button>
+          </div>
+
+          <!-- button to toggle the stats on cards-->
+          <div class="control">
+            <button
+              class="button is-warning"
+              id="toggle"
+              onclick="toggleStats()"
+            >
+              Toggle Stats
+            </button>
+          </div>
+        </div>
+
+        <div class="field is-grouped"></div>
+      </form>
+    </div>
+
+    <!-- Create a container to hold a grid of cards -->
+    <!-- Use flex box to dynamically change the rows/columns-->
+    <div
+      class="container"
+      id="card-container"
+      style="display: flex; flex-wrap: wrap; padding-bottom: 100px"
+    ></div>
+
+    <footer class="page-footer">
+      <div class="container">
+        <p><a href="https://pokeapi.co/">Powered by PokéAPI</a></p>
+        <!-- Check out this cool project that makes Pokémon cards shiny using CSS! -->
+        <i>
+          <a href="https://poke-holo.simey.me/">Check out this cool project</a>
+          that makes Pokémon cards shiny using CSS!
+        </i>
+      </div>
+    </footer>
+  </body>
+  <script src="myScript.js"></script>
+</html>
+
+<style>
+  .page-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+  }
+</style>
