@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
-function TodoDetailsPage() {
-  const { id } = useParams();
+function ProjectDetailsPage() {
+  const { projectId, todoId } = useParams();
   const [todo, setTodo] = useState(null);
 
   useEffect(() => {
     const fetchTodo = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/todo/${id}`);
+        const response = await fetch(
+          `http://localhost:3001/project/${projectId}/todo/${todoId}`
+        );
         const data = await response.json();
         setTodo(data);
+        console.log(data);
       } catch (error) {
-        console.error("Error fetching todo:", error);
+        console.error("Error fetching project:", error);
       }
     };
 
     fetchTodo();
-  }, [id]);
+  }, [projectId, todoId]);
 
   return (
     <div className="container">
@@ -25,13 +28,19 @@ function TodoDetailsPage() {
       {todo ? (
         <div>
           <p>
-            <strong>ID:</strong> {todo.id}
+            <strong>Todo ID:</strong> {todo._id}
           </p>
           <p>
             <strong>Description:</strong> {todo.description}
           </p>
           <p>
             <strong>Completed:</strong> {todo.completed ? "Yes" : "No"}
+          </p>
+          <p>
+            <strong>Project ID:</strong>{" "}
+            <Link to={`/project/${todo.project_id}/todo`}>
+              {todo.project_id}
+            </Link>
           </p>
         </div>
       ) : (
@@ -41,4 +50,4 @@ function TodoDetailsPage() {
   );
 }
 
-export default TodoDetailsPage;
+export default ProjectDetailsPage;

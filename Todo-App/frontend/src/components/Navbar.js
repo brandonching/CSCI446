@@ -11,8 +11,8 @@ function Navbar() {
     >
       <div className="container">
         <div className="navbar-brand">
-          <Link to="/todo" className="navbar-item">
-            Todo App
+          <Link to="/project" className="navbar-item">
+            Projects Todo App
           </Link>
         </div>
 
@@ -20,8 +20,11 @@ function Navbar() {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link to="/todo" className="button is-light">
-                  Todo List
+                <Link to="/project" className="button is-light">
+                  Project List
+                </Link>
+                <Link to="/project/new" className="button is-light">
+                  New Project
                 </Link>
                 <Link to="/todo/new" className="button is-light">
                   New Todo
