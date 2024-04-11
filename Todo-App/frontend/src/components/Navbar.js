@@ -26,9 +26,6 @@ function Navbar() {
                 <Link to="/project/new" className="button is-light">
                   New Project
                 </Link>
-                <Link to="/todo/new" className="button is-light">
-                  New Todo
-                </Link>
               </div>
             </div>
           </div>

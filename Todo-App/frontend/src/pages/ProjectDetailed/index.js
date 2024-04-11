@@ -64,7 +64,9 @@ function ProjectDetailsPage() {
               {todos.map((todo) => (
                 <tr key={todo._id}>
                   <td>
-                    <Link to={`/project/${project._id}/todo/${todo._id}`}>{todo._id}</Link>
+                    <Link to={`/project/${project._id}/todo/${todo._id}`}>
+                      {todo._id}
+                    </Link>
                   </td>
                   <td>{todo.description}</td>
                   <td>{todo.completed ? "Yes" : "No"}</td>
@@ -72,6 +74,7 @@ function ProjectDetailsPage() {
               ))}
             </tbody>
           </table>
+          <Link to={`/project/${project._id}/todo/new`} className="button">New Todo</Link>
         </div>
       ) : (
         <p>Loading...</p>

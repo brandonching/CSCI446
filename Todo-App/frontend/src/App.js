@@ -14,13 +14,22 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/project/:projectId/todo/:todoId" element={<TodoDetailed />} />
-          <Route path="/todo/new" element={<NewTodoForm />} />
+          <Route
+            path="/project/:projectId/todo/:todoId"
+            element={<TodoDetailed />}
+          />
+          <Route path="/project/new" element={<NewProject />} />
           <Route path="/todo" element={<TodoList />} />
           <Route path="/" element={<TodoList />} />
           <Route path="/project" element={<ProjectList />} />
-          <Route path="/project/new" element={<NewProject />} />
-          <Route path="/project/:projectId/todo" element={<ProjectDetailed />} />
+          <Route
+            path="/project/:projectId/todo/new"
+            element={<NewTodoForm />}
+          />
+          <Route
+            path="/project/:projectId/todo"
+            element={<ProjectDetailed />}
+          />
         </Routes>
       </div>
     </Router>

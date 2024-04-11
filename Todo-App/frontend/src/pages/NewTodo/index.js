@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 function NewTodoFormPage() {
   const [description, setDescription] = useState("");
   const [completed, setCompleted] = useState(false);
-  const [projectId, setProject] = useState("");
+  const { projectId } = useParams();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,7 +30,6 @@ function NewTodoFormPage() {
         // Clear form fields after successful submission
         setDescription("");
         setCompleted(false);
-        setProject("");
       } else {
         console.error("Failed to create new todo.");
       }
@@ -51,19 +51,6 @@ function NewTodoFormPage() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Enter todo description"
-              required
-            />
-          </div>
-        </div>
-        <div className="field">
-          <label className="label">Project ID</label>
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              value={projectId}
-              onChange={(e) => setProject(e.target.value)}
-              placeholder="Enter project ID"
               required
             />
           </div>
